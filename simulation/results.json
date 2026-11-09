@@ -1,0 +1,265 @@
+{
+ "birthday": 50070,
+ "wedding": 32427,
+ "hosting": 17046,
+ "event_total": 108087.05,
+ "rows": [
+  {
+   "name": "D1 Event entry in homepage lists + search empty state (new users)",
+   "p10": 787,
+   "p50": 1521,
+   "p90": 2604,
+   "share_of_event_base": 1.41,
+   "effort": 1,
+   "risk": 2,
+   "conf": 2,
+   "weeks_to_detect": 2.9,
+   "score": 1522,
+   "note": "always-on merchandising; relative lift on event base net of clicks taken from core; homepage traffic unknown (reach assumed 10x event base)",
+   "testability": 1.0,
+   "rank_score": 1521
+  },
+  {
+   "name": "B2 Recover abandoned event request starts",
+   "p10": 422,
+   "p50": 810,
+   "p90": 1485,
+   "share_of_event_base": 0.75,
+   "effort": 1.5,
+   "risk": 1,
+   "conf": 2,
+   "weeks_to_detect": 0.8,
+   "score": 1081,
+   "note": "sign-up is the LAST step (audit), so only logged-in/app abandoners are reachable; completion, reach, return assumed",
+   "testability": 1.0,
+   "rank_score": 1080
+  },
+  {
+   "name": "B3 Copy angle test (awareness vs trust vs speed)",
+   "p10": 108,
+   "p50": 291,
+   "p90": 572,
+   "share_of_event_base": 0.27,
+   "effort": 0.5,
+   "risk": 1,
+   "conf": 2,
+   "weeks_to_detect": null,
+   "score": 1164,
+   "note": "direct volume small; value is choosing the message for B1/C1/C2",
+   "testability": 0.5,
+   "rank_score": 582
+  },
+  {
+   "name": "A3 Hosting bridge from masa-sandalye/catering/ses sistemi/yat/tekne",
+   "p10": 267,
+   "p50": 410,
+   "p90": 583,
+   "share_of_event_base": 0.38,
+   "effort": 1,
+   "risk": 2,
+   "conf": 4,
+   "weeks_to_detect": 5.0,
+   "score": 821,
+   "note": "event-intent share measured 37% (27/73) on masa sandalye; others assumed lower",
+   "testability": 0.7,
+   "rank_score": 574
+  },
+  {
+   "name": "C3 \"2026 nisan/kina/dugun maliyeti\" press report",
+   "p10": 239,
+   "p50": 566,
+   "p90": 1084,
+   "share_of_event_base": 0.52,
+   "effort": 0.5,
+   "risk": 1,
+   "conf": 1,
+   "weeks_to_detect": null,
+   "score": 1134,
+   "note": "pickups x visits x conversion; no data",
+   "testability": 0.5,
+   "rank_score": 566
+  },
+  {
+   "name": "A2 Wedding card after nisan/kina/wedding/ceyiz requests",
+   "p10": 252,
+   "p50": 359,
+   "p90": 492,
+   "share_of_event_base": 0.33,
+   "effort": 1,
+   "risk": 2,
+   "conf": 3,
+   "weeks_to_detect": 3.7,
+   "score": 539,
+   "note": "same card component, second entry point",
+   "testability": 1.0,
+   "rank_score": 538
+  },
+  {
+   "name": "B1 Event price/local page upgrade (occasion links, proof, sticky CTA)",
+   "p10": 642,
+   "p50": 1233,
+   "p90": 2183,
+   "share_of_event_base": 1.14,
+   "effort": 2,
+   "risk": 1,
+   "conf": 2,
+   "weeks_to_detect": 29.3,
+   "score": 1234,
+   "note": "SEO-origin share and lift both assumed",
+   "testability": 0.35,
+   "rank_score": 432
+  },
+  {
+   "name": "C6 WhatsApp concierge on event pages (ops-capped)",
+   "p10": 1309,
+   "p50": 2246,
+   "p90": 3480,
+   "share_of_event_base": 2.08,
+   "effort": 1.5,
+   "risk": 2,
+   "conf": 1,
+   "weeks_to_detect": null,
+   "score": 749,
+   "note": "effort includes ops hours (~0.5 FTE); capped at 50-400 requests/month ops capacity",
+   "testability": 0.5,
+   "rank_score": 374
+  },
+  {
+   "name": "A1 Party card after birthday-type requests",
+   "p10": 331,
+   "p50": 480,
+   "p90": 666,
+   "share_of_event_base": 0.44,
+   "effort": 2,
+   "risk": 2,
+   "conf": 3,
+   "weeks_to_detect": 2.4,
+   "score": 361,
+   "note": "CTR split: cake (focused buyers) vs organization/palyaco (mention 2nd needs 17-21%)",
+   "testability": 1.0,
+   "rank_score": 360
+  },
+  {
+   "name": "C4 Office year-end event pack (B2B CRM)",
+   "p10": 83,
+   "p50": 165,
+   "p90": 296,
+   "share_of_event_base": 0.15,
+   "effort": 0.5,
+   "risk": 1,
+   "conf": 1,
+   "weeks_to_detect": 0.6,
+   "score": 332,
+   "note": "business share, reachable, conversion assumed",
+   "testability": 1.0,
+   "rank_score": 330
+  },
+  {
+   "name": "C1 Birthday comeback reminder (11 months later)",
+   "p10": 132,
+   "p50": 215,
+   "p90": 340,
+   "share_of_event_base": 0.2,
+   "effort": 1,
+   "risk": 1,
+   "conf": 2,
+   "weeks_to_detect": 18.5,
+   "score": 432,
+   "note": "repeat-occasion share, reachable, conversion, incrementality assumed",
+   "testability": 0.35,
+   "rank_score": 150
+  },
+  {
+   "name": "C5 Kres/school birthday cake variant",
+   "p10": 239,
+   "p50": 394,
+   "p90": 605,
+   "share_of_event_base": 0.37,
+   "effort": 1,
+   "risk": 1,
+   "conf": 1,
+   "weeks_to_detect": 352.7,
+   "score": 395,
+   "note": "child share and uplift assumed",
+   "testability": 0.35,
+   "rank_score": 138
+  },
+  {
+   "name": "C2 Seasonal event slot on homepage/app",
+   "p10": 273,
+   "p50": 540,
+   "p90": 953,
+   "share_of_event_base": 0.5,
+   "effort": 1,
+   "risk": 2,
+   "conf": 1,
+   "weeks_to_detect": 81.3,
+   "score": 270,
+   "note": "relative lift on event base, net of cannibalization; homepage traffic unknown",
+   "testability": 0.35,
+   "rank_score": 94
+  },
+  {
+   "name": "X1 Keyword trigger from cleaning/moving free text",
+   "p10": 11,
+   "p50": 32,
+   "p90": 68,
+   "share_of_event_base": 0.03,
+   "effort": 2,
+   "risk": 3,
+   "conf": 4,
+   "weeks_to_detect": 5.9,
+   "score": 22,
+   "note": "0 of 315 sample texts mention an event",
+   "testability": 0.7,
+   "rank_score": 15
+  }
+ ],
+ "programs": [
+  {
+   "name": "P1 Card program (A1+A2+A3, one component, 3 entry points)",
+   "p10": 1026,
+   "p50": 1269,
+   "p90": 1542,
+   "share": 1.17
+  },
+  {
+   "name": "P2 Lifecycle CRM (B2+C1)",
+   "p10": 639,
+   "p50": 1041,
+   "p90": 1719,
+   "share": 0.96
+  },
+  {
+   "name": "All of P1+P2+B1 with 5-25% overlap discount",
+   "p10": 2366,
+   "p50": 3100,
+   "p90": 4095,
+   "share": 2.87
+  }
+ ],
+ "a1_base": 620,
+ "a1_sensitivity": {
+  "card seen (.7-.95)": [
+   510,
+   693
+  ],
+  "CTR (1%-8%)": [
+   155,
+   1239
+  ],
+  "submit after click (40-62%)": [
+   477,
+   739
+  ],
+  "incrementality (50-90%)": [
+   443,
+   797
+  ]
+ },
+ "pro_cost_TL": {
+  "p10": 800928,
+  "p50": 1394793,
+  "p90": 2266007
+ }
+}

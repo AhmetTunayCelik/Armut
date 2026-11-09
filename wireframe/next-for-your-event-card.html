@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr"><head><meta charset="utf-8"><title>Wireframe v3: event entry + post-submit (low fidelity)</title>
+<style>
+body{font-family:Arial,sans-serif;background:#eee;margin:0;padding:24px;color:#222}
+h1{font-size:18px;margin:18px 0 4px}p.n{font-size:12px;color:#555;margin:0 0 14px;max-width:1000px}
+.row{display:flex;gap:22px;flex-wrap:wrap;align-items:flex-start}.col h2{font-size:13px;margin:0 0 6px}
+.ph{width:290px;background:#fff;border:2px solid #444;border-radius:14px;padding:12px;box-sizing:border-box}
+.b{border:1px dashed #888;padding:8px;margin:7px 0;font-size:12px;background:#f7f7f7}
+.new{border:2px solid #222;background:#fff;padding:9px;margin:7px 0;font-size:12px}
+.bad{border:2px solid #b33;background:#fff5f5;padding:6px;margin:6px 0;font-size:11px}
+.tag{font-size:10px;background:#222;color:#fff;padding:1px 5px;border-radius:3px}.tagr{font-size:10px;background:#b33;color:#fff;padding:1px 5px;border-radius:3px}
+.it{display:flex;gap:8px;align-items:center;border-top:1px solid #ccc;padding:6px 0;font-size:11px}
+.ic{width:30px;height:30px;background:#ccc;flex:none}.grow{flex:1}
+.btn{background:#444;color:#fff;font-size:11px;padding:5px 8px;border-radius:4px;white-space:nowrap}
+small{color:#666}
+</style></head><body>
+<p class="n">Low fidelity, mobile. Shared request flow and prices unchanged. [Brackets] = placeholder, not data. Checked against armut.com on 2026-11-07.</p>
+
+<h1>1. Where people start today (the brief's three entry points)</h1>
+<div class="row">
+<div class="col"><h2>Homepage search, today</h2><div class="ph">
+<div class="b">Hangi hizmete ihtiyacın var?</div>
+<div class="b"><b>Önerilen hizmetler</b><br>Evden Eve Nakliyat · Boyacı · Ev Temizliği · Boş Ev Temizliği · Nakliye · Psikolog ...</div>
+<div class="bad"><span class="tagr">!</span> No event service in suggestions or in the 12 trending / 24 popular lists</div>
+<div class="bad"><span class="tagr">i</span> Typed search works (kına, 1 yaş, baby shower); only some queries fail ("takı töreni" shows jewelry making)</div>
+</div></div>
+<div class="col"><h2>Campaign page, today (next, not first)</h2><div class="ph">
+<div class="b"><b>Düğün Fotoğrafçısı</b><br>Short text</div>
+<div class="b">Başla (only button)</div>
+<div class="bad"><span class="tagr">!</span> No price before the flow (range shows from step 1)</div>
+<div class="bad"><span class="tagr">!</span> No pro work or photos</div>
+<div class="bad"><span class="tagr">!</span> Reviews with masked names ("xxxx")</div>
+<p style="font-size:11px">Why next: showing work or price on the page is a shared-template and pricing-model question for the head of product. Safe step now: headline copy test.<br><b>A</b> "Armut'ta düğün fotoğrafçısı da var: ücretsiz teklifler al"<br><b>B</b> "İstanbul'da [N] düğün fotoğrafçısı" (only if N &ge; 50)<br><b>C</b> "Düğününe az kaldıysa: bugün teklif al" (only in cells passing the 48h quote gate)<br>Primary: landing to submitted request.</p>
+</div></div>
+<div class="col"><h2>Local listing, today (next, not first)</h2><div class="ph">
+<div class="b"><b>En İyi 40 İstanbul Düğün Fotoğrafçısı</b> (937 pros)</div>
+<div class="bad"><span class="tagr">!</span> Profiles from 2016 near the top</div>
+<div class="bad"><span class="tagr">!</span> Off-topic bios, one placeholder text</div>
+<div class="bad"><span class="tagr">!</span> Supply is not the limit: ~1-2 Armut requests per photographer a year (estimate)</div>
+<p style="font-size:11px">Why next: ranking logic is likely shared across categories. Sketch: "Son 12 ayda aktif" badge and default filter in event categories; profiles inactive 24+ months move to the end. Needs head of product (ranking). Guardrail: quotes per request, time to first quote.</p>
+</div></div>
+</div>
+
+<h1>2. First bet (D1): event entry where new users look</h1>
+<div class="row">
+<div class="col"><h2>Search empty state <span class="tag">NEW</span></h2><div class="ph">
+<div class="b">Hangi hizmete ihtiyacın var?</div>
+<div class="new"><b>Düğün ve etkinlik</b> <span class="tag">NEW</span><br>Düğün Fotoğrafçısı · Gelin Makyajı · Doğum Günü Pastası · [seasonal: Evde Nişan Organizasyonu]</div>
+<div class="b"><b>Önerilen hizmetler</b><br>Evden Eve Nakliyat · Ev Temizliği · Boyacı ...</div>
+</div></div>
+<div class="col"><h2>Homepage popular grid <span class="tag">NEW</span></h2><div class="ph">
+<div class="b">[core] [core] [core]</div>
+<div class="new"><span class="ic" style="display:inline-block;vertical-align:middle"></span> <b>Nişan, kına, doğum günü</b><br><small>Ücretsiz teklif al</small></div>
+<div class="b">[core] [core] [core]</div>
+<p style="font-size:11px">Tap opens the search overlay with "Düğün ve etkinlik" expanded (no new page). Tile + block = one test variant. Editorial seasonal slot vs popularity ranking; ProntoPro already does this.</p>
+</div></div>
+<div class="col"><h2>How D1 is judged</h2><div class="ph">
+<div class="b"><b>Primary:</b> submitted event requests per homepage/search visitor</div>
+<div class="b"><b>North star:</b> event requests with 1+ quote in 48h</div>
+<div class="b"><b>Decisive guardrail:</b> total submitted requests per visitor (non-inferiority margin set before launch)</div>
+<div class="b"><b>Break-even:</b> each -0.5% core needs +5.6% events</div><div class="b"><b>Runtime:</b> ~4 weeks (assumed traffic); kill if 0-quote share jumps</div>
+</div></div>
+</div>
+
+<h1>3. Next bet (P1): reassure first, then the next service</h1>
+<div class="row">
+<div class="col"><h2>Success page today</h2><div class="ph">
+<div class="b"><b>Talebin alındı</b><br>Doğum günü organizasyonu</div>
+<div class="b">Taleplerim (no time estimate, no next step)</div>
+</div></div>
+<div class="col"><h2>Success page <span class="tag">NEW</span></h2><div class="ph">
+<div class="b"><b>Talebin alındı</b> · Doğum günü organizasyonu · [Kadıköy]</div>
+<div class="new"><b>Ne olacak?</b> <span class="tag">NEW</span><br>Teklifler bildirim ve e-postayla gelir, genelde [median time to first quote for this service and city; hidden if not enough data] içinde. Vazgeçersen talebi iptal edebilirsin.</div>
+<div class="new"><b>Etkinliğin için başka neye ihtiyacın var?</b>
+<div class="it"><span class="ic"></span><span class="grow"><b>Masa sandalye kiralama</b><br><small>Şehir hazır · [aralık]</small></span><span class="btn">Teklif al</span></div>
+<div class="it"><span class="ic"></span><span class="grow"><b>Palyaço / Animatör</b><br><small>Şehir hazır · [aralık]</small></span><span class="btn">Teklif al</span></div>
+<div style="font-size:11px;color:#555;text-align:center">Daha fazla · Şimdi değil · Zaten ayarladım</div></div>
+</div></div>
+<div class="col"><h2>Wedding variant</h2><div class="ph">
+<div class="b"><b>Talebin alındı</b> · Düğün fotoğrafçısı</div>
+<div class="new"><b>Ne olacak?</b> ...</div>
+<div class="new"><b>Düğünün için</b>
+<div class="it"><span class="ic"></span><span class="grow"><b>Gelin makyajı</b><br><small>[aralık]</small></span><span class="btn">Teklif al</span></div>
+<div class="it"><span class="ic"></span><span class="grow"><b>Gelin arabası süsleme</b><br><small>[aralık]</small></span><span class="btn">Teklif al</span></div></div>
+</div></div>
+</div>
+<p class="n" style="margin-top:14px">Tests run on separate layers (a D1 user who submits is not also in P1 treatment). Specs: handoffs/20 and 24.</p>
+</body></html>

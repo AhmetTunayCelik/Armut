@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="tr"><head><meta charset="utf-8"><title>Occasion entry: 3 design options (low fidelity)</title>
+<style>
+body{font-family:Arial,sans-serif;background:#eee;margin:0;padding:24px;color:#222}
+h1{font-size:18px;margin:20px 0 4px}p.n{font-size:12px;color:#555;margin:0 0 12px;max-width:1050px}
+.row{display:flex;gap:22px;flex-wrap:wrap;align-items:flex-start}.col h2{font-size:13px;margin:0 0 6px}
+.ph{width:300px;background:#fff;border:2px solid #444;border-radius:14px;padding:12px;box-sizing:border-box}
+.b{border:1px dashed #888;padding:8px;margin:6px 0;font-size:12px;background:#f7f7f7}
+.new{border:2px solid #222;background:#fff;padding:8px;margin:6px 0;font-size:12px}
+.tag{font-size:10px;background:#222;color:#fff;padding:1px 5px;border-radius:3px}
+.sec{font-size:11px;font-weight:bold;margin:10px 0 2px;color:#444;text-transform:uppercase}
+.card{display:flex;gap:8px;align-items:center;border:1px solid #bbb;border-radius:6px;padding:6px;margin:5px 0;font-size:11px}
+.ic{width:34px;height:34px;background:#ccc;flex:none;border-radius:4px}.grow{flex:1}
+.btn{background:#444;color:#fff;font-size:11px;padding:5px 8px;border-radius:4px;white-space:nowrap}
+.chk{width:14px;height:14px;border:2px solid #444;flex:none}
+.tl{border-left:3px solid #444;padding-left:8px;margin:6px 0 6px 6px}
+.chip{display:inline-block;border:1px solid #444;border-radius:12px;padding:3px 8px;margin:2px;font-size:11px}
+small{color:#666}
+</style></head><body>
+<p class="n">Low fidelity, mobile. One occasion page per occasion, localized per market (TR: Evleniyor musun? / Nişan-kına / Doğum günü; IT: Ti sposi? / Comunione / Compleanno; UK: Getting married? / Birthday / Hen party). Every service opens its OWN existing request flow: no basket, no "request all", no change to the request flow or pricing. [Brackets] = placeholders. Service order on the page comes from measured co-need and is updated by the post-submit card data.</p>
+
+<h1>Entry points (same for all options)</h1>
+<div class="row">
+<div class="col"><h2>Homepage occasion tiles <span class="tag">NEW</span></h2><div class="ph">
+<div class="b">Hangi hizmete ihtiyacın var? [search]</div>
+<div class="new"><b>Özel günün mü var?</b><br><span class="chip">Evleniyor musun?</span><span class="chip">Nişan / kına</span><span class="chip">Doğum günü</span></div>
+<div class="b">Popüler hizmetler [core grid]</div>
+</div></div>
+<div class="col"><h2>Search suggestions <span class="tag">NEW</span></h2><div class="ph">
+<div class="b">Hangi hizmete ihtiyacın var?</div>
+<div class="new"><b>Özel günler</b><br>Düğün hazırlığı · Nişan ve kına · Doğum günü</div>
+<div class="b">Önerilen hizmetler: Evden Eve Nakliyat · Ev Temizliği ...</div>
+</div></div>
+<div class="col"><h2>After an event request <span class="tag">NEW</span></h2><div class="ph">
+<div class="b"><b>Talebin alındı</b> · Nişan organizasyonu</div>
+<div class="b">Ne olacak? Teklifler genelde [median] içinde gelir.</div>
+<div class="new"><b>Nişanın için diğer hizmetler</b> → opens the Nişan occasion page</div>
+</div></div>
+</div>
+
+<h1>Option A: grouped occasion page (Thumbtack /events pattern) — recommended</h1>
+<div class="row">
+<div class="col"><h2>"Evleniyor musun?" page</h2><div class="ph">
+<div class="b"><b>Evleniyor musun? Tebrikler!</b><br><small>Düğün için gereken her şey, ücretsiz teklif al. [İstanbul]</small></div>
+<div class="sec">Önce bunları ayarla</div>
+<div class="card"><span class="ic"></span><span class="grow"><b>Düğün mekanı</b><br><small>[aralık] · [N] firma</small></span><span class="btn">Teklif al</span></div>
+<div class="card"><span class="ic"></span><span class="grow"><b>Düğün organizasyonu</b><br><small>[aralık] · [N] firma</small></span><span class="btn">Teklif al</span></div>
+<div class="sec">O gün için</div>
+<div class="card"><span class="ic"></span><span class="grow"><b>Düğün fotoğrafçısı</b><br><small>[aralık] · [N] fotoğrafçı</small></span><span class="btn">Teklif al</span></div>
+<div class="card"><span class="ic"></span><span class="grow"><b>Gelin makyajı</b><br><small>[aralık]</small></span><span class="btn">Teklif al</span></div>
+<div class="card"><span class="ic"></span><span class="grow"><b>Gelin arabası süsleme</b></span><span class="btn">Teklif al</span></div>
+<div class="sec">Kutlama</div>
+<div class="card"><span class="ic"></span><span class="grow"><b>Düğün pastası</b> · <b>DJ / müzik</b></span><span class="btn">Teklif al</span></div>
+<div class="b"><small>Talep ettiklerin: ✓ Düğün fotoğrafçısı (Talep edildi)</small></div>
+</div></div>
+<div class="col"><h2>Why A</h2><div class="ph" style="font-size:12px">
+<p>Closest to real service benchmarks (Thumbtack groups party services by theme with average prices).</p>
+<p>Each card = one existing request flow. Price range and pro count come from data Armut already shows.</p>
+<p>"Talep edildi" state turns the page into a light checklist without a basket.</p>
+<p><b>Effort:</b> FE 1-2 wks, UX 1 wk, BE config + tracking.</p>
+<p><b>Risk:</b> section names imply an order; keep them neutral until data shows real booking order.</p>
+</div></div>
+</div>
+
+<h1>Option B: "Getir recipe" checklist</h1>
+<div class="row">
+<div class="col"><h2>"Nişan listesi"</h2><div class="ph">
+<div class="b"><b>Nişan listen</b><br><small>İhtiyacın olanları işaretle, her biri için ayrı teklif al.</small></div>
+<div class="card"><span class="chk"></span><span class="grow"><b>Nişan mekanı</b> <small>[aralık]</small></span></div>
+<div class="card"><span class="chk"></span><span class="grow"><b>Masa sandalye kiralama</b> <small>44% of nişan requests mention it</small></span></div>
+<div class="card"><span class="chk"></span><span class="grow"><b>Ses sistemi / müzik</b> <small>19%</small></span></div>
+<div class="card"><span class="chk"></span><span class="grow"><b>Nişan fotoğrafçısı</b> <small>12%</small></span></div>
+<div class="card"><span class="chk"></span><span class="grow"><b>Nişan pastası</b></span></div>
+<div class="new" style="text-align:center"><b>Seçtiklerim için teklif al (3)</b><br><small>Opens each request flow one after another</small></div>
+</div></div>
+<div class="col"><h2>Why / why not B</h2><div class="ph" style="font-size:12px">
+<p>Closest to Getir's "recipe -> ingredients" idea and Getir's ready basket ("Hazır Sepet").</p>
+<p>The tick is explicit intent, so fewer low-intent requests than a "request all" button.</p>
+<p><b>But:</b> Armut has no basket: 3 ticks = 3 full request flows in a row. Long, and pros pay per quote, so abandoned or half-hearted requests cost them.</p>
+<p>Percentages are design notes, not shown to users.</p>
+<p><b>Use:</b> test later, once A works; or let the ticks save a "my list" without sending requests.</p>
+</div></div>
+</div>
+
+<h1>Option C: timeline ("what to book when")</h1>
+<div class="row">
+<div class="col"><h2>"Düğün yol haritası"</h2><div class="ph">
+<div class="tl"><b>Aylar önce</b><br>Mekan · Organizasyon <span class="btn">Teklif al</span></div>
+<div class="tl"><b>Haftalar önce</b><br>Fotoğrafçı · Gelin makyajı <span class="btn">Teklif al</span></div>
+<div class="tl"><b>Son hafta</b><br>Pasta · Gelin arabası süsleme <span class="btn">Teklif al</span></div>
+<div class="b"><small>Tarihini gir, sana hatırlatalım (only with consent)</small></div>
+</div></div>
+<div class="col"><h2>Why / why not C</h2><div class="ph" style="font-size:12px">
+<p>Matches planner apps (wedding checklists) and helps first-time planners.</p>
+<p><b>But:</b> our own data shows most requests are near-date and small (median ~7 days for photographers in TR samples; similar in IT). A months-ahead timeline fits planners, not most of our users.</p>
+<p>Reminders need messaging consent.</p>
+<p><b>Use:</b> a later variant for "Evleniyor musun?" only, if data shows long-lead planners.</p>
+</div></div>
+</div>
+
+<h1>Test</h1>
+<p class="n">Phase 1: Option A in TR (İstanbul, Ankara, İzmir) and one IT city, before peak season. Arms: control (today) / homepage tile -> occasion page / tile -> search overlay with the event block. Primary: submitted event requests per exposed visitor. North star: event requests with 1+ quote in 48h. Also: share sending 2+ event requests in 30 days. Guardrails: total requests per visitor, 0-quote share, pro complaints. Phase 2: Option B ticks as a variant of A.</p>
+</body></html>

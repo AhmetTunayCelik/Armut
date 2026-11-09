@@ -1,0 +1,125 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Making event services visible – Ahmet Tunay Çelik</title>
+<style>
+@font-face{font-family:Nunito;src:url(fonts/nunito-latin-400-normal.woff2) format('woff2'),url(fonts/nunito-latin-ext-400-normal.woff2) format('woff2');font-weight:400}
+@font-face{font-family:Nunito;src:url(fonts/nunito-latin-600-normal.woff2) format('woff2'),url(fonts/nunito-latin-ext-600-normal.woff2) format('woff2');font-weight:600}
+@font-face{font-family:Nunito;src:url(fonts/nunito-latin-700-normal.woff2) format('woff2'),url(fonts/nunito-latin-ext-700-normal.woff2) format('woff2');font-weight:700}
+@font-face{font-family:Nunito;src:url(fonts/nunito-latin-800-normal.woff2) format('woff2'),url(fonts/nunito-latin-ext-800-normal.woff2) format('woff2');font-weight:800}
+:root{--g:#2CB34F;--gl:#E2F8E8;--b:#0066FF;--bl:#E6F0FF;--ink:#1F2933;--mut:#6A7482;--bg:#FAFBF8}
+*{box-sizing:border-box}body{margin:0;background:#dfe5df;font-family:Nunito,Arial,sans-serif;color:var(--ink)}
+.s{display:none;width:1280px;height:720px;margin:20px auto;background:var(--bg);padding:60px 72px;position:relative;overflow:hidden;border-radius:18px}
+.s::before{content:"";position:absolute;right:-120px;top:-120px;width:340px;height:340px;border-radius:50%;background:var(--gl);opacity:.7}
+.s::after{content:"";position:absolute;left:72px;top:36px;width:56px;height:6px;border-radius:3px;background:linear-gradient(90deg,var(--g),var(--b))}
+.s.on{display:block}.s>*{position:relative}
+h1{font-size:54px;font-weight:800;margin:0 0 18px;line-height:1.1}h2{font-size:34px;font-weight:800;margin:0 0 24px;line-height:1.2}
+h3{font-weight:700}p,li{font-size:21px;line-height:1.5}.k{font-size:64px;font-weight:800;color:var(--g);margin:0}.m{color:var(--mut);font-size:17px}
+.dark{background:linear-gradient(135deg,#F1FAF3 0%,#EEF4FF 100%)}.dark .m{color:var(--mut)}
+.row{display:flex;gap:26px;align-items:flex-start}.col{flex:1}
+.card{background:#fff;border:0;border-radius:16px;padding:18px 22px;box-shadow:0 4px 18px rgba(31,41,51,.07);border-top:5px solid var(--g)}
+.card.o{border-top-color:var(--b)}.card h3{margin:0 0 6px;font-size:21px}.card p{font-size:17px;margin:4px 0}.card p.k{font-size:52px;line-height:1.1}
+img{border:0;border-radius:14px;background:#fff;object-fit:contain;box-shadow:0 4px 18px rgba(31,41,51,.1)}
+table{border-collapse:separate;border-spacing:0;width:100%;font-size:18px;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(31,41,51,.06)}
+td,th{padding:10px 14px;border-bottom:1px solid #EDF0EC;text-align:left}th{background:var(--gl);font-weight:700}.hl td{background:var(--bl)}
+.foot{position:absolute;left:72px;bottom:24px;font-size:14px;color:#9AA3AE}
+.why{position:absolute;left:72px;right:72px;bottom:56px;background:var(--gl);color:var(--ink);border-left:8px solid var(--g);padding:14px 22px;font-size:19px;border-radius:14px}.why b{color:#1E8A3B}
+.dark h1,.dark h2{color:var(--ink)}
+.nav{text-align:center;color:#6A7482;font-size:14px;margin-bottom:20px}
+.pimg{display:none}
+@media print{@page{size:1280px 720px;margin:0}body{background:#fff}.s{display:block!important;margin:0;border-radius:0;page-break-after:always}.nav{display:none}iframe{display:none}.pimg{display:flex!important}}
+</style></head><body>
+
+<section class="s on dark"><p class="m">APM case study · Armut / ProntoPro · November 2026</p>
+<h1 style="font-size:62px;margin-top:110px">Making event services visible</h1>
+<p style="font-size:28px">An occasion entry that groups existing services and sends each one into today's request flow.</p>
+<p class="m" style="margin-top:120px">Ahmet Tunay Çelik</p></section>
+
+<section class="s"><h2>How I worked</h2><div class="row">
+<div class="col card"><h3>Walked it</h3><p>3 sites (Armut, ProntoPro, Homerun) × 3 entry points from the brief</p><p>Real wedding-photographer requests to the end; 2 real quotes back</p></div>
+<div class="col card"><h3>Read the data</h3><p>Public price pages with real past requests</p><p>Pro pages with yearly request counts</p><p>Benchmarks: Thumbtack, Düğün.com, The Knot, Getir</p></div>
+<div class="col card o"><h3>Worked with an AI team</h3><p>Claude agents: researchers, event &amp; supply experts, engineer, analyst, UX, fact checker, red-team critic, review panel</p><p>I set direction and constraints and chose the solution</p></div></div>
+<p class="m" style="margin-top:28px">Numbers are public-page estimates or small samples. Time above the 2-3 h guide, mostly verification and waiting for real quotes. AI transcript shared.</p>
+<div class="foot">2</div></section>
+
+<section class="s"><h2>Goal and constraint</h2>
+<p><b>Goal:</b> more requests in event services (wedding photographer, birthday cake, bridal make-up and similar).</p>
+<p><b>Team:</b> 1 backend, 1 frontend, 1 UX designer.</p>
+<p><b>My constraint:</b> no change to the shared request flow or pricing (range shown, pro sets the price). Both affect every category, so solutions are event-specific layers on top.</p>
+<p><b>Scope:</b> Armut (TR), ProntoPro (IT), Homerun (UK) share flow and templates: one build, three markets.</p><div class="foot">3</div></section>
+
+<section class="s"><h2>Homepage search: people find events only if they already know to ask</h2><div class="row">
+<div class="col"><p class="k">0 of 36</p><p>services on Armut's homepage lists are event services. The search box's suggestions show moving, painting, cleaning.</p>
+<p>Typed search works: "kına" → Kına Organizasyon, Kına Mekanları.</p><p>ProntoPro shows one event service in trending. Homerun none.</p></div>
+<img src="../screenshots/armut-home-mobile-2026-11-07.jpg" style="width:260px;height:400px"></div><div class="why"><b>So what:</b> demand is not missing, the door is. We only show events to people who already know to ask.</div><div class="foot">4 · armut.com, 2026-11-07</div></section>
+
+<section class="s"><h2>Campaign page and listing: thin trust where buyers compare</h2><div class="row">
+<div class="col"><p>Campaign page: one "Başla" button, no price, no pro work, masked review names.</p><p>Local list: profiles from 2015-2017, off-topic bios.</p><p><b>Same template on all three sites.</b></p><p class="m">Event buyers come from Instagram, where they see portfolios.</p></div>
+<img src="../screenshots/armut-campaign-mobile-2026-11-07.jpg" style="width:260px;height:500px"><img src="../screenshots/armut-local-istanbul-mobile-2026-11-07.jpg" style="width:260px;height:500px"></div><div class="foot">5</div></section>
+
+<section class="s"><h2>Events are bundles, sold one by one</h2><p class="k">44%</p>
+<p>of nişan organization requests also mention tables and chairs (music 19%). Birthday organization: tables 21%, clown 17%. Cake: 6-8%.</p>
+<p>No site groups services by occasion. After a request, nobody suggests the next service.</p>
+<p class="m">Armut price-page samples (Armut chooses which ones are shown)</p><div class="why"><b>So what:</b> customers think in occasions; we sell single services. The next service is the cheapest request we can get.</div><div class="foot">6</div></section>
+
+<section class="s"><h2>Low reach, not low need (hypothesis)</h2><div class="row">
+<div class="col card"><h3>Turkey</h3><p class="k">~0.5%</p><p>wedding photographer requests vs marriages (2,947 / ~552k)</p></div>
+<div class="col card o"><h3>Italy</h3><p class="k">~1.8%</p><p>(3,321 / ~180k). Catering 19,300 and DJ 5,717 vs moving 7,832</p></div>
+<div class="col"><p>Armut: ~108k event customers a year, mostly small, home-hosted and near-date (civil ceremony, kına, "Mi sposerò questo venerdì!").</p><p>Supply is not the limit: ~937 Istanbul photographers, ~1-2 requests each a year.</p></div></div>
+<div class="why"><b>So what:</b> the same platform reaches ~3x more of the market in Italy. Turkey looks like a reach problem.</div><div class="foot">7 · public pro-page counts, estimates</div></section>
+
+<section class="s dark"><h2>Problem</h2><p style="font-size:30px">Event services are invisible on our own surfaces, and they are sold one by one while customers think in occasions.</p>
+<p style="font-size:26px;margin-top:50px"><b>How might we</b> let someone planning an occasion see everything they need in one place, without changing the request flow?</p><div class="foot">8</div></section>
+
+<section class="s"><h2>Options I weighed</h2><table><tr><th>Option</th><th>Score /25</th><th>Decision</th></tr>
+<tr><td>After-request "what happens next" + next-service card</td><td>22</td><td>Runs alongside (only reaches people who already asked)</td></tr>
+<tr class="hl"><td><b>Occasion entry + grouped occasion page</b></td><td>21</td><td><b>Main bet: the only option that reaches new event demand</b></td></tr>
+<tr><td>Campaign headline copy test</td><td>20</td><td>Cheap side test</td></tr>
+<tr><td>SEO price and local page upgrade</td><td>19</td><td>Next</td></tr>
+<tr><td>"Found on Armut/ProntoPro" creator program</td><td>12</td><td>Later, with marketing</td></tr></table>
+<p class="m">Dropped: price or work before the request, changes to the flow, event messages to cleaning/moving customers (0 of 315 mention events).</p><div class="why"><b>Why the 21 beats the 22:</b> the card only reaches people already asking. The occasion entry is the one option that creates new event demand.</div><div class="foot">9</div></section>
+
+<section class="s"><h2>Inspiration: copy the page, not the basket</h2><div class="row">
+<div class="col"><p><b>Grocery recipes</b> (Migros "Ne pişirsem?", Instacart shoppable recipes; Getir tried a similar idea): everything for one dinner on one page.</p><p><b>Thumbtack Events, Düğün.com, The Knot, Bridebook:</b> services grouped by occasion, one quote per service.</p><p><b>No service site has a "request all" button:</b> each service has its own quotes, pros and timing.</p></div>
+<img src="../screenshots/benchmarks/thumbtack-events-groups-2026-11-08.jpg" style="width:360px;height:270px"><img src="../screenshots/benchmarks/dugun-com-hero-2026-11-08.jpg" style="width:330px;height:270px"></div>
+<div class="why"><b>Lesson:</b> start from the occasion, show everything on one page, but keep one request per service. Pros pay per quote, so a "request all" button would create weak leads.</div><div class="foot">10</div></section>
+
+<section class="s"><h2>The solution: one occasion page, four ways in</h2><div class="row">
+<div class="col card o"><h3>Homepage</h3><p>Tiles: "Evleniyor musun?", "Nişan / kına", "Doğum günü" (IT "Ti sposi?", UK "Getting married?")</p></div>
+<div class="col card o"><h3>Search</h3><p>"Özel günler" block in the suggestions</p></div>
+<div class="col card"><h3>Campaign &amp; listing</h3><p>"Bu gün için diğer hizmetler" block</p></div>
+<div class="col card"><h3>After a request</h3><p>"Nişanın için diğer hizmetler" link</p></div></div>
+<p style="margin-top:30px">Occasion page: grouped services, price range and pro count already on the site, one "Teklif al" per service into its existing flow, "Talep edildi" on services already requested. No basket.</p><div class="foot">11 · prototype: deck/prototype.html</div></section>
+
+<section class="s"><h2>Prototype</h2><div class="row"><div class="col">
+<p>Clickable mobile prototype: homepage tile → occasion page → existing request flow → after-request screen.</p>
+<p>Design options: <b>A</b> grouped page (chosen); <b>B</b> checklist ticks, closest to Getir (later: 3 ticks = 3 full flows); <b>C</b> timeline (later: most requests are near-date).</p>
+<p class="m">Open deck/prototype.html · wireframe/occasion-hub-designs.html</p></div>
+<div class="pimg" style="gap:10px"><img src="proto-1.png" style="width:190px;height:330px"><img src="proto-2.png" style="width:190px;height:330px"><img src="proto-3.png" style="width:190px;height:330px"></div><iframe src="prototype.html" style="width:390px;height:580px;border:0;margin-top:-50px;transform:scale(.92);transform-origin:top"></iframe></div><div class="foot">12</div></section>
+
+<section class="s"><h2>What I need to know, and how</h2><table>
+<tr><td>Event funnel by entry point and market</td><td>Product analytics</td></tr>
+<tr><td>How often event words are searched</td><td>Search logs, Search Console</td></tr>
+<tr><td>Co-need across all requests</td><td>Request data, then the after-request card</td></tr>
+<tr><td>Event requests with 0 quotes in 48 h, by city</td><td>Marketplace data (where to launch)</td></tr>
+<tr><td>Seasonality</td><td>Requests by month</td></tr>
+<tr><td>Why buyers choose Instagram or leave</td><td>8-10 customer interviews</td></tr>
+<tr><td>Do pros want more requests at this fee?</td><td>Pro survey, quote rates</td></tr></table><div class="why"><b>First pull:</b> 0-quote share by city. It decides where we can safely send more demand.</div><div class="foot">13</div></section>
+
+<section class="s"><h2>Test and success</h2><div class="row"><div class="col">
+<p><b>Where:</b> İstanbul, Ankara, İzmir + one Italian city, only where pros answer within 48 h; before wedding season.</p>
+<p><b>Arms:</b> control / tile → occasion page / tile → search block. <b>4 weeks.</b></p></div>
+<div class="col card o"><p><b>Primary:</b> submitted event requests per visitor</p><p><b>Quality:</b> event requests with 1+ quote in 48 h</p><p><b>Guardrail:</b> total requests per visitor (+ long-term holdout)</p><p><b>Kill rule:</b> 0-quote share &gt; control + 5 pts</p></div></div>
+<p class="m">Sizing, not forecast: roughly 1-2 thousand extra event requests a year per market. The test decides.</p><div class="foot">14</div></section>
+
+<section class="s"><h2>Risks and next steps</h2><div class="row">
+<div class="col"><h3>Risks</h3><ul><li>Homepage space taken from core → guardrail + holdout</li><li>Weak requests cost pros → quote-based quality metric, supply-gated cities</li><li>Buyers start on Instagram</li></ul></div>
+<div class="col"><h3>Next</h3><ul><li>After-request card (runs alongside)</li><li>"Found on Armut/ProntoPro" creator pilot linking to the occasion page</li><li>SEO price pages, copy test, trust card</li></ul></div></div>
+<p class="m">Appendix: assumptions, data, platform evidence, AI transcript</p><div class="foot">15</div></section>
+
+<section class="s dark"><h2>In one sentence</h2><p style="font-size:30px;line-height:1.4">Event demand is real (~108k event customers a year on Armut, 17-44% of organization requests ask for a second service) but our homepage, search and listings never show it.</p><p style="font-size:30px;line-height:1.4;color:#0066FF">I would test one occasion entry that groups existing services and sends each one into today's request flow.</p><p class="m" style="margin-top:40px">Built for a team of three, in weeks, for all markets.</p><div class="foot">16</div></section>
+<section class="s"><h2>Appendix</h2><ul><li>Assumptions and how I would validate them: low reach vs low need, co-need beyond samples, supply absorbs more requests</li><li>Data sources: Armut and ProntoPro price pages and pro pages (checked 7-8 Nov 2026), TÜİK marriages via DHA, İSFO via Milliyet</li><li>Platform evidence: consecutive request IDs and one shared account across the three sites (inference)</li><li>Design options A/B/C: wireframe/occasion-hub-designs.html</li><li>AI conversation: [link / transcript]</li></ul><div class="foot">17</div></section>
+<div class="nav">← → to move · <span id="n"></span></div>
+<script>
+const S=[...document.querySelectorAll('.s')];let i=0;const n=document.getElementById('n');
+function go(k){S[i].classList.remove('on');i=Math.max(0,Math.min(S.length-1,k));S[i].classList.add('on');n.textContent=(i+1)+' / '+S.length}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')go(i+1);if(e.key==='ArrowLeft')go(i-1)});
+document.addEventListener('click',e=>{if(!e.target.closest('iframe'))go(i+1)});go(0);
+</script></body></html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Wireframe: first change (low fidelity)</title>
+<style>
+body{font-family:Arial,sans-serif;background:#eee;margin:0;padding:24px;color:#222}
+h1{font-size:18px;margin:0 0 4px}p.n{font-size:12px;color:#555;margin:0 0 16px;max-width:900px}
+.row{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start}
+.col h2{font-size:13px;margin:0 0 6px}
+.ph{width:300px;background:#fff;border:2px solid #444;border-radius:14px;padding:12px;box-sizing:border-box}
+.b{border:1px dashed #888;padding:8px;margin:8px 0;font-size:12px;background:#f7f7f7}
+.hl{border:2px solid #222;background:#fff}
+.btn{background:#444;color:#fff;text-align:center;padding:10px;font-size:13px;margin:8px 0;border-radius:4px}
+.img{display:inline-block;width:42px;height:42px;background:#ccc;margin-right:4px;vertical-align:middle}
+.card{display:flex;gap:6px;align-items:center;border:1px solid #bbb;padding:6px;margin:4px 0;font-size:11px}
+.tag{font-size:10px;background:#222;color:#fff;padding:1px 5px;border-radius:3px}
+.opt{border:1px solid #888;padding:7px;margin:5px 0;font-size:12px;border-radius:4px}
+.sel{background:#ddd}
+</style></head><body>
+<h1>First change: price and work before the request (O2) + event date question (O1)</h1>
+<p class="n">Low-fidelity wireframe, mobile view, wedding photographer, Istanbul. Grey boxes are placeholders. Names, numbers and ranges are NOT real data: ranges come from Armut quote data (Assumption), pros need to consent to show work. Date checked 2026-11-07 against the current page at armut.com/d/dugun-fotografcisi/194.</p>
+<div class="row">
+<div class="col"><h2>A. Campaign / local page: today</h2><div class="ph">
+<div class="b">Header / search</div>
+<div class="b"><b>Wedding photographer</b><br>Short text about the service</div>
+<div class="btn">Basla</div>
+<div class="b">How it works (steps)</div>
+<div class="b">Reviews (masked names)</div>
+</div></div>
+
+<div class="col"><h2>B. Same page: change <span class="tag">NEW</span></h2><div class="ph">
+<div class="b">Header / search</div>
+<div class="b"><b>Wedding photographer in Istanbul</b></div>
+<div class="b hl"><span class="tag">NEW</span> <b>Typical price</b><br>[low] - [high] TL for a full day<br><small>Based on recent quotes in Istanbul. Varies with hours and extras.</small></div>
+<div class="b hl"><span class="tag">NEW</span> <b>Recent work</b>
+<div class="card"><span class="img"></span>Pro first name<br>rating, [n] reviews</div>
+<div class="card"><span class="img"></span>Pro first name<br>rating, [n] reviews</div>
+<div class="card"><span class="img"></span>Pro first name<br>rating, [n] reviews</div></div>
+<div class="b hl"><span class="tag">NEW</span> Answer a few questions, get up to 4 quotes, no obligation.</div>
+<div class="btn">Get quotes for your wedding</div>
+<div class="b">How it works / reviews</div>
+</div></div>
+
+<div class="col"><h2>C. Request flow, "when" step: change <span class="tag">NEW</span></h2><div class="ph">
+<div class="b">Progress</div>
+<b style="font-size:13px">When is your wedding?</b>
+<div class="b hl"><span class="tag">NEW</span> Event date: [ pick a date ]</div>
+<div class="opt">I don't have a date yet</div>
+<div class="opt">Just looking at prices</div>
+<div class="opt sel">Today: "within three weeks" is no longer the default for events</div>
+<div class="btn">Continue</div>
+</div></div>
+</div>
+<p class="n" style="margin-top:16px"><b>What to check in the test:</b> click-through to the request, requests submitted per 100 sessions, completion at the "when" step, quotes per request (guardrail). See handoffs/05-first-change-test-metrics.md.</p>
+</body></html>

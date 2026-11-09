@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr"><head><meta charset="utf-8"><title>Wireframe: Sıradaki ihtiyacın card (low fidelity)</title>
+<style>
+body{font-family:Arial,sans-serif;background:#eee;margin:0;padding:24px;color:#222}
+h1{font-size:18px;margin:0 0 4px}p.n{font-size:12px;color:#555;margin:0 0 16px;max-width:980px}
+.row{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start}.col h2{font-size:13px;margin:0 0 6px}
+.ph{width:300px;background:#fff;border:2px solid #444;border-radius:14px;padding:12px;box-sizing:border-box}
+.b{border:1px dashed #888;padding:8px;margin:8px 0;font-size:12px;background:#f7f7f7}
+.new{border:2px solid #222;background:#fff;padding:10px;margin:8px 0}
+.tag{font-size:10px;background:#222;color:#fff;padding:1px 5px;border-radius:3px}
+.it{display:flex;gap:8px;align-items:center;border-top:1px solid #ccc;padding:7px 0;font-size:11px}
+.ic{width:34px;height:34px;background:#ccc;flex:none}.grow{flex:1}
+.btn{background:#444;color:#fff;font-size:11px;padding:6px 8px;border-radius:4px;white-space:nowrap}
+.link{font-size:11px;color:#555;text-align:center;margin-top:6px;text-decoration:underline}
+small{color:#666}
+</style></head><body>
+<h1>First change: "Sıradaki ihtiyacın" card after an event request (P1)</h1>
+<p class="n">Low fidelity, mobile. Event categories only; the shared request flow and prices do not change. Rows come from measured second needs in real request text (handoff 19). Price ranges are the ones Armut already shows; rating appears only after review scope is confirmed. Everything in [brackets] is a placeholder, not real data.</p>
+<div class="row">
+<div class="col"><h2>A. Success page today</h2><div class="ph">
+<div class="b"><b>Talebin alındı</b><br>Doğum günü organizasyonu</div>
+<div class="b">Teklifler gelince haber vereceğiz</div>
+<div class="b">Taleplerim</div>
+<div class="b" style="height:120px">(empty)</div>
+</div></div>
+<div class="col"><h2>B. Success page with card <span class="tag">NEW</span></h2><div class="ph">
+<div class="b"><b>Talebin alındı</b><br>Doğum günü organizasyonu · [Kadıköy]</div>
+<div class="new"><b style="font-size:13px">Etkinliğin için başka neye ihtiyacın var?</b><br><small>Aynı semt için ücretsiz teklif al.</small>
+<div class="it"><span class="ic"></span><span class="grow"><b>Masa sandalye kiralama</b><br>Misafirlerin için<br><small>[ortalama fiyat aralığı] · [puan]</small></span><span class="btn">Teklif al</span></div>
+<div class="it"><span class="ic"></span><span class="grow"><b>Palyaço / Animatör</b><br>Çocuklar eğlensin<br><small>[ortalama fiyat aralığı] · [puan]</small></span><span class="btn">Teklif al</span></div>
+<div class="it"><span class="ic"></span><span class="grow"><b>Doğum günü fotoğrafçısı</b><br>Anılar kalsın<br><small>[ortalama fiyat aralığı] · [puan]</small></span><span class="btn">Teklif al</span></div>
+<div class="link">Şimdi değil · Zaten ayarladım</div></div>
+<div class="b">Teklifler gelince haber vereceğiz</div>
+</div></div>
+<div class="col"><h2>C. Same card after nişan organizasyon</h2><div class="ph">
+<div class="b"><b>Talebin alındı</b><br>Nişan organizasyon · [Esenyurt]</div>
+<div class="new"><b style="font-size:13px">Nişanın için başka neye ihtiyacın var?</b>
+<div class="it"><span class="ic"></span><span class="grow"><b>Masa sandalye kiralama</b><br><small>44% of nişan requests mention it (sample)</small></span><span class="btn">Teklif al</span></div>
+<div class="it"><span class="ic"></span><span class="grow"><b>Ses sistemi kiralama</b><br><small>19% mention music</small></span><span class="btn">Teklif al</span></div>
+<div class="it"><span class="ic"></span><span class="grow"><b>Nişan fotoğrafçısı</b><br><small>12% mention photo</small></span><span class="btn">Teklif al</span></div>
+<div class="link">Şimdi değil · Zaten ayarladım</div></div>
+<p style="font-size:10px;color:#777">Percentages are design notes for the reviewer, not shown to users.</p>
+</div></div>
+<div class="col"><h2>D. Tap "Teklif al"</h2><div class="ph">
+<div class="b">Opens the EXISTING request flow for Masa sandalye kiralama</div>
+<div class="b">City from the first request (prefill only if the flow already supports it)</div>
+<div class="b">Logged: card_view, row_click, request_start(source=card), submit(source=card), dismiss reason</div>
+</div></div>
+</div>
+<p class="n" style="margin-top:16px"><b>Test:</b> user-level 50/50 among submitters of birthday organization, nişan organization, palyaço and event-text masa sandalye requests. Primary: event requests in other services within 14 days per submitter. Guardrails: hire rate and quotes per request on card leads vs organic, pro complaints, core requests on the same screens. Spec: handoffs/20-tier1-specs.md.</p>
+<h1 style="margin-top:28px">D1: event entry for new users (homepage lists and search empty state)</h1>
+<p class="n">Merchandising only. Search already maps event words well; these slots tell users Armut does events before they search. Seasonal rotation; services are real Armut services.</p>
+<div class="row">
+<div class="col"><h2>E. Search empty state today</h2><div class="ph">
+<div class="b">Hangi hizmete ihtiyacın var?</div>
+<div class="b"><b>Önerilen hizmetler</b><br>Evden Eve Nakliyat<br>Boyacı<br>Ev Temizliği<br>Boş Ev Temizliği<br>Nakliye<br>Psikolog ...</div>
+</div></div>
+<div class="col"><h2>F. Search empty state with events <span class="tag">NEW</span></h2><div class="ph">
+<div class="b">Hangi hizmete ihtiyacın var?</div>
+<div class="b"><b>Önerilen hizmetler</b><br>Evden Eve Nakliyat<br>Ev Temizliği</div>
+<div class="new"><b>Bu sezon</b> <span class="tag">NEW</span><br>Evde Nişan Organizasyonu<br>Kına Organizasyon<br>Doğum Günü Organizasyonu</div>
+<div class="b">Boyacı<br>Nakliye ...</div>
+</div></div>
+<div class="col"><h2>G. Homepage popular list with one event tile <span class="tag">NEW</span></h2><div class="ph">
+<div class="b">Popüler hizmetler (grid)</div>
+<div class="b">[core] [core] [core]</div>
+<div class="new"><span class="ic" style="display:inline-block;width:34px;height:34px;background:#ccc;vertical-align:middle"></span> <b>Nişan ve kına</b><br><small>Organizasyon, mekan, fotoğrafçı: ücretsiz teklif al</small></div>
+<div class="b">[core] [core] [core]</div>
+</div></div>
+</div>
+<p class="n"><b>Test:</b> user-level 50/50. Primary: event request starts and submits from users with no past event request. Guardrail: total requests per homepage visitor and core request starts. Spec: handoffs/20 (D1).</p>
+</body></html>

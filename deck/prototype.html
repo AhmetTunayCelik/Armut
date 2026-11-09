@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8"><title>Prototype: occasion entry (low fidelity)</title>
+<style>
+body{margin:0;background:#e8e6e0;font-family:Arial,sans-serif;display:flex;justify-content:center;padding:16px}
+.ph{width:360px;min-height:560px;background:#fff;border:2px solid #333;border-radius:22px;padding:14px;box-sizing:border-box;position:relative}
+.scr{display:none}.scr.on{display:block}
+.top{font-size:12px;color:#888;margin-bottom:8px}.srch{border:1px solid #bbb;border-radius:20px;padding:9px 12px;font-size:13px;color:#777;cursor:pointer}
+h3{font-size:16px;margin:12px 0 6px}.chip{display:inline-block;border:2px solid #c2410c;color:#c2410c;border-radius:16px;padding:6px 10px;margin:3px;font-size:13px;cursor:pointer;font-weight:bold}
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}.g{background:#eee;border-radius:8px;height:56px;font-size:10px;padding:4px;color:#666}
+.sec{font-size:11px;font-weight:bold;color:#555;text-transform:uppercase;margin:12px 0 4px}
+.card{display:flex;align-items:center;gap:8px;border:1px solid #ccc;border-radius:8px;padding:8px;margin:5px 0;font-size:12px}
+.ic{width:34px;height:34px;background:#ddd;border-radius:6px;flex:none}.grow{flex:1}small{color:#777}
+.btn{background:#1d2430;color:#fff;border:0;border-radius:6px;padding:7px 10px;font-size:12px;cursor:pointer}
+.done{background:#e6f4ea;color:#1e6b34}.back{font-size:12px;color:#1c6e8c;cursor:pointer;margin-bottom:6px}
+.box{border:1px dashed #999;background:#f7f7f7;padding:9px;font-size:12px;margin:8px 0;border-radius:6px}
+.new{border:2px solid #c2410c;background:#fff7f0;padding:9px;font-size:12px;margin:8px 0;border-radius:6px}
+.note{position:absolute;bottom:8px;left:14px;right:14px;font-size:10px;color:#999}
+</style></head><body><div class="ph">
+
+<div class="scr on" id="home"><div class="top">armut.com (prototype, placeholders in [ ])</div>
+<div class="srch" onclick="go('search')">Hangi hizmete ihtiyacın var?</div>
+<div class="new"><b>Özel günün mü var?</b><br>
+<span class="chip" onclick="go('wed')">Evleniyor musun?</span><span class="chip" onclick="go('wed')">Nişan / kına</span><span class="chip" onclick="go('bday')">Doğum günü</span></div>
+<h3>Popüler hizmetler</h3><div class="grid"><div class="g">Evden eve nakliyat</div><div class="g">Ev temizliği</div><div class="g">Boyacı</div><div class="g">Klima</div><div class="g">Koltuk yıkama</div><div class="g">Özel ders</div></div>
+<div class="note">Tap an occasion or the search box.</div></div>
+
+<div class="scr" id="search"><div class="back" onclick="go('home')">← Geri</div>
+<div class="srch">|</div>
+<div class="new"><b>Özel günler</b><br><span class="chip" onclick="go('wed')">Düğün hazırlığı</span><span class="chip" onclick="go('wed')">Nişan ve kına</span><span class="chip" onclick="go('bday')">Doğum günü</span></div>
+<div class="box"><b>Önerilen hizmetler</b><br>Evden Eve Nakliyat · Ev Temizliği · Boyacı · Nakliye</div></div>
+
+<div class="scr" id="wed"><div class="back" onclick="go('home')">← Ana sayfa</div>
+<h3>Evleniyor musun? Tebrikler!</h3><small>Düğün ve nişan için ihtiyacın olan her şey. Her hizmet için ayrı, ücretsiz teklif al. [İstanbul]</small>
+<div class="sec">Önce bunları ayarla</div>
+<div class="card"><span class="ic"></span><span class="grow"><b>Nişan / düğün mekanı</b><br><small>[aralık] · [N] firma</small></span><button class="btn" onclick="req(this,'Mekan')">Teklif al</button></div>
+<div class="card"><span class="ic"></span><span class="grow"><b>Nişan organizasyonu</b><br><small>[aralık] · [N] firma</small></span><button class="btn" onclick="req(this,'Nişan organizasyonu')">Teklif al</button></div>
+<div class="sec">O gün için</div>
+<div class="card"><span class="ic"></span><span class="grow"><b>Düğün fotoğrafçısı</b><br><small>[aralık] · [N] fotoğrafçı</small></span><button class="btn" onclick="req(this,'Düğün fotoğrafçısı')">Teklif al</button></div>
+<div class="card"><span class="ic"></span><span class="grow"><b>Gelin makyajı</b><br><small>[aralık]</small></span><button class="btn" onclick="req(this,'Gelin makyajı')">Teklif al</button></div>
+<div class="sec">Misafirler ve kutlama</div>
+<div class="card"><span class="ic"></span><span class="grow"><b>Masa sandalye kiralama</b><br><small>[aralık]</small></span><button class="btn" onclick="req(this,'Masa sandalye')">Teklif al</button></div>
+<div class="card"><span class="ic"></span><span class="grow"><b>Ses sistemi / müzik · Pasta</b></span><button class="btn" onclick="req(this,'Müzik')">Teklif al</button></div></div>
+
+<div class="scr" id="bday"><div class="back" onclick="go('home')">← Ana sayfa</div>
+<h3>Doğum günü mü var?</h3><small>Parti için gereken her şey. [Kadıköy]</small>
+<div class="card"><span class="ic"></span><span class="grow"><b>Doğum günü organizasyonu</b><br><small>[aralık]</small></span><button class="btn" onclick="req(this,'Doğum günü organizasyonu')">Teklif al</button></div>
+<div class="card"><span class="ic"></span><span class="grow"><b>Doğum günü pastası</b></span><button class="btn" onclick="req(this,'Pasta')">Teklif al</button></div>
+<div class="card"><span class="ic"></span><span class="grow"><b>Palyaço / animatör</b></span><button class="btn" onclick="req(this,'Palyaço')">Teklif al</button></div>
+<div class="card"><span class="ic"></span><span class="grow"><b>Masa sandalye · Balon süsleme</b></span><button class="btn" onclick="req(this,'Süsleme')">Teklif al</button></div></div>
+
+<div class="scr" id="flow"><div class="top">Existing request flow (unchanged)</div>
+<h3 id="fs">[Hizmet]</h3>
+<div class="box">Adım 1 / 6 · questions as today</div><div class="box">… free text, location, when …</div><div class="box">Email / sign-up</div>
+<button class="btn" onclick="go('ok')">Talebi gönder</button>
+<div class="note">The flow is not changed; the occasion page only links into it.</div></div>
+
+<div class="scr" id="ok"><h3>Talebin alındı ✓</h3><small id="okn"></small>
+<div class="new"><b>Ne olacak?</b><br>Teklifler bildirim ve e-postayla gelir, genelde [bu hizmet ve şehir için ortalama süre] içinde. İstersen talebi iptal edebilirsin.</div>
+<div class="new"><b>Etkinliğin için diğer hizmetler</b><br><small>Seçtiğin hizmet artık "Talep edildi" olarak görünür.</small><br><br><button class="btn" onclick="go(last)">Etkinlik sayfasına dön</button></div></div>
+
+</div><script>
+let last='wed',cur='';
+function go(id){document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));document.getElementById(id).classList.add('on');if(id==='wed'||id==='bday')last=id}
+function req(b,n){cur=b;document.getElementById('fs').textContent=n+' talebi';document.getElementById('okn').textContent=n;go('flow')}
+const o=go;go=function(id){if(id===last&&cur){cur.textContent='Talep edildi';cur.className='btn done';cur.onclick=null;cur=''}o(id)};
+</script></body></html>

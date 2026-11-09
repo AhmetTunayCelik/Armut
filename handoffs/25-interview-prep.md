@@ -1,0 +1,15 @@
+# 25 Interview prep: questions the panel will likely ask, 2026-11-08
+Short answers in Bulent's voice to adapt; numbers from handoffs 15, 18, 24.
+
+1. "+20% event submits and -1.5% core requests: do you ship?" +21,600 event vs -18,180 core = about +3,400 net requests. I would not ship on count alone: check value per request (event vs core), whether core was lost or only delayed (core requests per user over 4 weeks), and whether event requests still got quotes. If core loss is real, rotate the slot by season to cut its cost.
+2. "Isn't D1 obvious? Armut probably ranks lists by popularity on purpose." Yes, that is the point: popularity ranking keeps small categories invisible. D1 tests one editorial seasonal slot against pure popularity, with total requests as the decisive guardrail. ProntoPro already does it, so we can read their data first.
+3. "Why not fix the campaign page first? It looked worst." Its fixes need price or pro work before the request and touch shared templates, which my head of product ruled out for now. I start where I can ship in weeks and learn, and bring the page question to that conversation with data.
+4. "How do you know the numbers?" Counts come from Armut's public pages and are estimates; shares come from small public samples that Armut chooses (named with n). Impact is sizing, not forecast: roughly 1-2k a year per idea, and the test decides.
+5. "What about pros?" They pay per quote. New leads must have a pro cost per hire no worse than organic, and I watch quote rate in both arms because pros are shared.
+6. "Will pros quote on a 7-day job?" I don't know yet; quote rate by lead time is my first data pull, before any push for near-date demand.
+7. "How did you use AI, and what did you decide yourself?" AI agents did research, data pulls and critique; I set the direction and the constraints: keep the request flow and pricing out of scope, focus on discovery and the next service, approve the post-submit card, choose the first bet.
+8. "You spent more than 2-3 hours." Yes. I went deep on real data because the category is new to me; the deck itself is cut to 3 opportunities, 1 bet, 1 test, 1 metric set.
+9. "Your test requests cost pros money." Yes, I submitted real requests to see the full journey and cancelled them afterwards [Bulent: cancel the 3 test requests before submitting the case]; in a real role I would use internal test accounts.
+10. "Customers start on Google and Instagram, not your homepage, and it is only ~1-2k a year. Why first?" It is the cheapest event-only change my team can ship in a week, and it answers the key question: are event services invisible or unwanted? If it wins, the same block and supply gate move to the SEO price/local pages and the after-request screen, where the bigger volume is.
+11. "Why test in November?" I would not read a November test as the answer: run it pre-season (Feb-Apr) or compare against the same weeks last year.
+12. "Process?" I timeboxed the core; the extra time went to checking claims on the live sites. The AI transcript is shared openly.
